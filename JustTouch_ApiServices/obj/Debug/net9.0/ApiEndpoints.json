@@ -1,0 +1,210 @@
+[
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.AccountController",
+    "Method": "GetAccountData",
+    "RelativePath": "api/account/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.AccountController",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/account/ConfirmEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.AccountController",
+    "Method": "RegisterService",
+    "RelativePath": "api/account/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUser",
+        "Type": "JustTouch_Shared.Dtos.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.AccountController",
+    "Method": "SignIn",
+    "RelativePath": "api/account/SignIn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDto",
+        "Type": "JustTouch_Shared.Dtos.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.AccountController",
+    "Method": "UpdateAccount",
+    "RelativePath": "api/account/Update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "account",
+        "Type": "JustTouch_Shared.Dtos.AccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.MenuController",
+    "Method": "GetMenu",
+    "RelativePath": "api/menu/{branchCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "branchCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.MenuController",
+    "Method": "GetCatalog",
+    "RelativePath": "api/menu/Catalog/{catalogCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "catalogCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.MenuController",
+    "Method": "InsertCatalog",
+    "RelativePath": "api/menu/NewCatalog",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "catalog",
+        "Type": "JustTouch_Shared.Dtos.CatalogDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.MenuController",
+    "Method": "GetPublicMenu",
+    "RelativePath": "api/menu/PublicMenu/{branchCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "branchCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.MenuController",
+    "Method": "UpdateCatalog",
+    "RelativePath": "api/menu/UpdateCatalog",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "catalog",
+        "Type": "JustTouch_Shared.Dtos.CatalogDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.OrderController",
+    "Method": "GetOrders",
+    "RelativePath": "api/order/{code}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.OrderController",
+    "Method": "UpdateOrder",
+    "RelativePath": "api/order/ChangeState",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "groupState",
+        "Type": "JustTouch_Shared.Dtos.OrderGroupDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JustTouch_ApiServices.Controllers.OrderController",
+    "Method": "InsertOrders",
+    "RelativePath": "api/order/Take",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderGroup",
+        "Type": "JustTouch_Shared.Dtos.OrderGroupDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

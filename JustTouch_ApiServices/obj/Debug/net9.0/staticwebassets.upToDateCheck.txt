@@ -1,0 +1,2 @@
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_ApiServices\wwwroot\EmailTemplates\Welcome.html
+wwwroot\EmailTemplates\Welcome.html

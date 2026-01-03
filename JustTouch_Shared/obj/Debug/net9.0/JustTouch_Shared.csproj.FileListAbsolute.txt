@@ -1,0 +1,12 @@
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\bin\Debug\net9.0\JustTouch_Shared.deps.json
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\bin\Debug\net9.0\JustTouch_Shared.dll
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\bin\Debug\net9.0\JustTouch_Shared.pdb
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\JustTouch_Shared.csproj.AssemblyReference.cache
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\JustTouch_Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\JustTouch_Shared.AssemblyInfoInputs.cache
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\JustTouch_Shared.AssemblyInfo.cs
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\JustTouch_Shared.csproj.CoreCompileInputs.cache
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\JustTouch_Shared.dll
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\refint\JustTouch_Shared.dll
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\JustTouch_Shared.pdb
+C:\Users\Francisco\Documents\trabalo\Repos\Proyecto_JustTouch\JustTouch v0.1\JustTouch_ApiServices\JustTouch_ApiServices\JustTouch_Shared\obj\Debug\net9.0\ref\JustTouch_Shared.dll

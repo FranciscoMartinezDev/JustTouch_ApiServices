@@ -1,0 +1,6 @@
+@JustTouch_ApiServices_HostAddress = http://localhost:5063
+
+GET {{JustTouch_ApiServices_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

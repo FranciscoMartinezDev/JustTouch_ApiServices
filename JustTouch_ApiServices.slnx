@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="JustTouch_ApiServices/JustTouch_ApiServices.csproj" />
+  <Project Path="JustTouch_Shared/JustTouch_Shared.csproj" />
+</Solution>
