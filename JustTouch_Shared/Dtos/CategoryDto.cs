@@ -2,7 +2,7 @@
 
 namespace JustTouch_Shared.Dtos
 {
-    public class CatalogDto
+    public class CategoryDto
     {
         public string category { get; set; } = string.Empty;
         public string? categoryCode { get; set; }

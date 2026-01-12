@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj": {}
+    "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj": {
+    "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj",
         "projectName": "JustTouch_Shared",
-        "projectPath": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj",
+        "projectPath": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_Shared\\JustTouch_Shared.csproj",
         "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\JustTouch_Shared\\obj\\",
+        "outputPath": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.3.9, )"
+            },
             "Supabase.Postgrest": {
               "target": "Package",
               "version": "[4.1.0, )"

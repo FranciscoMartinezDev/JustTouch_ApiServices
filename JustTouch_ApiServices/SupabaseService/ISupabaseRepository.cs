@@ -23,7 +23,7 @@ namespace JustTouch_ApiServices.SupabaseService
         Task<AuthResponse?> SignIn(Users user);
         Task<bool> SignUp(Users user);
         Task<string?> GetFromBucket(string bucket, string folder, string name);
-
+        Task<string> UploadFile(string folder, Stream fileStream, string originalFileName);
 
         Task VoidRpc(string functionName, object payload);
         Task<TResponse?> ContentRpc<TResponse>(string functionName, object payload);

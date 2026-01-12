@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JustTouch_ApiServices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d55f9fe46bf1ba1746618577945475286c9b7f6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("JustTouch_ApiServices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JustTouch_ApiServices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

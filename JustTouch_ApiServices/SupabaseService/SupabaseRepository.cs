@@ -1,9 +1,9 @@
-﻿using JustTouch_Shared.Auth;
+﻿using JustTouch_ApiServices.Helpers;
+using JustTouch_Shared.Auth;
 using JustTouch_Shared.Models;
 using Supabase;
 using Supabase.Postgrest.Models;
 using System.Linq.Expressions;
-using static Supabase.Postgrest.Constants;
 
 namespace JustTouch_ApiServices.SupabaseService
 {
@@ -117,11 +117,27 @@ namespace JustTouch_ApiServices.SupabaseService
                 return null;
             }
         }
-        public async Task VoidRpc(string functionName, object payload) => await client.Rpc(functionName, new { data = payload });
-        public async Task<TResponse?> ContentRpc<TResponse>(string functionName, object payload)
+
+        public async Task<string> UploadFile(string folder, Stream fileStream, string originalFileName)
         {
-            var response = await client.Rpc<TResponse>(functionName, new { data = payload });
-            return response;
+            var extension = Path.GetExtension(originalFileName);
+            var fileName = $"{Guid.NewGuid()}{extension}";
+            var filePath = $"{folder}/{fileName}";
+
+            using var ms = new MemoryStream();
+            await fileStream.CopyToAsync(ms);
+            var bytes = ms.ToArray();
+
+            await client.Storage.From("justtouch").Upload(bytes, filePath, new Supabase.Storage.FileOptions
+            {
+                ContentType = ContentTypeHelper.GetContentType(extension),
+                Upsert = false
+            });
+
+            return fileName;
         }
+
+        public async Task VoidRpc(string functionName, object payload) => await client.Rpc(functionName, new { data = payload });
+        public async Task<TResponse?> ContentRpc<TResponse>(string functionName, object payload) => await client.Rpc<TResponse>(functionName, new { data = payload });
     }
 }

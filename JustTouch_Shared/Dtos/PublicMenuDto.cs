@@ -3,6 +3,6 @@
     public class PublicMenuDto
     {
         public BranchDto? branch { get; set; }
-        public List<CatalogDto> catalogs { get; set; } = new();
+        public List<CategoryDto> catalogs { get; set; } = new();
     }
 }

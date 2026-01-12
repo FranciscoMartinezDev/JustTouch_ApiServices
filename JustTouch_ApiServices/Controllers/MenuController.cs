@@ -4,6 +4,7 @@ using JustTouch_Shared.Dtos;
 using JustTouch_Shared.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.TagHelpers.Cache;
 using Newtonsoft.Json;
 
 namespace JustTouch_ApiServices.Controllers
@@ -38,7 +39,7 @@ namespace JustTouch_ApiServices.Controllers
                 {
                     foreach (var c in branchMenu.Menus)
                     {
-                        var catalog = Mapper.Map<Menu, CatalogDto>(c);
+                        var catalog = Mapper.Map<Menu, CategoryDto>(c);
                         if (c.Products!.Count > 0)
                         {
                             foreach (var p in c.Products!)
@@ -89,7 +90,7 @@ namespace JustTouch_ApiServices.Controllers
                 {
                     foreach (var c in branchMenu.Menus)
                     {
-                        var catalog = Mapper.Map<Menu, CatalogDto>(c);
+                        var catalog = Mapper.Map<Menu, CategoryDto>(c);
                         if (c.Products!.Count > 0)
                         {
                             foreach (var p in c.Products!)
@@ -139,7 +140,7 @@ namespace JustTouch_ApiServices.Controllers
                     return NotFound(error);
                 }
 
-                var catalogWrapped = Mapper.Map<Menu, CatalogDto>(catalog);
+                var catalogWrapped = Mapper.Map<Menu, CategoryDto>(catalog);
                 if (catalog.Products!.Count > 0)
                 {
                     foreach (var p in catalog.Products)
@@ -170,35 +171,58 @@ namespace JustTouch_ApiServices.Controllers
 
         //[Authorize]
         [HttpPost("NewCatalog")]
-        public async Task<IActionResult> InsertCatalog()
+        public async Task<IActionResult> InsertCatalog([FromForm] CategoryDto payload)
         {
             try
             {
-                // se toman los datos del form y se hacen los mapeos principales
-                var req = Request.Form;
-                var category = Mapper.FormMap<CatalogDto>(req);
-                var products = JsonConvert.DeserializeObject<List<ProductDto>>(Request.Form["products"]!);
-                category.products = products!;
-
                 //mapeo a entidades principales
-                var categoryWrapped = Mapper.Map<CatalogDto, Menu>(category!);
-                var productsWrapped = category.products.Select(x => Mapper.Map<ProductDto, Product>(x));
+                var categoryWrapped = Mapper.Map<CategoryDto, Menu>(payload!);
+                var productsWrapped = payload.products.Select(x =>
+                {
+                    var prod = Mapper.Map<ProductDto, Product>(x);
+                    prod.Price = decimal.Parse(x.price.Replace(".", ","));
+                    return prod;
+                });
+
                 categoryWrapped.Products = productsWrapped.ToList();
                 
                 // se busca la sucursal por codigo
                 var branch = await supabase.GetBy<Branch>(x => x.BranchCode == categoryWrapped.BranchCode);
                 if (branch == null) return BadRequest("No hay una sucursal asociada a esta solicitud");
-                
+                categoryWrapped.BranchId = branch.FirstOrDefault()!.IdBranch;
+
                 // se realiza la insercion
-                var newCatalog = await supabase.Insert(categoryWrapped);
+                var newCategory = await supabase.Insert(categoryWrapped);
+
+                // si hubo un problema se retorna badrequest
                 var error = new ErrorResponse()
                 {
                     Message = "No pudimos añadir el nuevo catalogo al menu",
                     StatusCode = 400
                 };
+                if (newCategory == null) return BadRequest(error);
 
-                if (newCatalog == null) return BadRequest(error);
-                return Ok(newCatalog);
+                // se guardan imagenes, se setea id y prod code
+                var images = categoryWrapped.Products.Select(async prod =>
+                {
+                    string fileName = string.Empty;
+                    if (prod.Image != null)
+                    {
+                        fileName = await supabase.UploadFile("Product_Images", prod.Image.OpenReadStream(), prod.Image.FileName);
+                    }
+                    prod.PictureUrl = fileName;
+                });
+                await Task.WhenAll(images);
+
+                categoryWrapped.Products.ForEach(x =>
+                {
+                    x.MenuId = newCategory.IdMenu;
+                    x.ProductCode = RandomString.GenerateRandomString(10);
+                });
+
+                // bulk de productos
+                await supabase.VoidRpc("BulkProducts", categoryWrapped.Products); 
+                return Ok();
             }
             catch (Exception)
             {
@@ -208,14 +232,14 @@ namespace JustTouch_ApiServices.Controllers
 
         [Authorize]
         [HttpPost("UpdateCatalog")]
-        public async Task<IActionResult> UpdateCatalog(CatalogDto catalog)
+        public async Task<IActionResult> UpdateCatalog(CategoryDto catalog)
         {
             try
             {
                 var newProducts = catalog.products.Where(x => x.id == 0).ToList();
                 var updatedProducts = catalog.products.Where(x => x.id == 1).ToList();
 
-                var menuWrapped = Mapper.Map<CatalogDto, Menu>(catalog);
+                var menuWrapped = Mapper.Map<CategoryDto, Menu>(catalog);
                 var updatedMenu = await supabase.Update(menuWrapped, x => x.CategoryCode == menuWrapped.CategoryCode);
                 var error = new ErrorResponse()
                 {

@@ -1,4 +1,5 @@
-﻿using Supabase.Postgrest.Attributes;
+﻿using Microsoft.AspNetCore.Http;
+using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 
 namespace JustTouch_Shared.Models
@@ -27,8 +28,10 @@ namespace JustTouch_Shared.Models
         [Column("IsAvailable")]
         public bool IsAvailable { get; set; }
 
-        [PrimaryKey("MenuId")]
+        [Column("MenuId")]
         public int MenuId { get; set; }
+
+        public IFormFile? Image {  get; set; }
 
         [Reference(typeof(Menu), ReferenceAttribute.JoinType.Inner, includeInQuery: true)]
         public Menu? Menu { get; set; }

@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{205372A4-7FAF-B985-5A16-4214A0936DB6}|JustTouch_ApiServices\\JustTouch_ApiServices.csproj|c:\\users\\francisco\\documents\\trabalo\\repos\\proyecto_justtouch\\justtouch v0.1\\justtouch_apiservices\\justtouch_apiservices\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{205372A4-7FAF-B985-5A16-4214A0936DB6}|JustTouch_ApiServices\\JustTouch_ApiServices.csproj|solutionrelative:justtouch_apiservices\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0BB06E2-C1F7-55B3-2B19-6F419AD0BC5D}|JustTouch_Shared\\JustTouch_Shared.csproj|c:\\users\\francisco\\documents\\trabalo\\repos\\proyecto_justtouch\\justtouch v0.1\\justtouch_apiservices\\justtouch_shared\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0BB06E2-C1F7-55B3-2B19-6F419AD0BC5D}|JustTouch_Shared\\JustTouch_Shared.csproj|solutionrelative:justtouch_shared\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{205372A4-7FAF-B985-5A16-4214A0936DB6}|JustTouch_ApiServices\\JustTouch_ApiServices.csproj|c:\\users\\francisco\\documents\\trabalo\\repos\\proyecto_justtouch\\justtouch v0.1\\justtouch_apiservices\\justtouch_apiservices\\supabaseservice\\supabaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{205372A4-7FAF-B985-5A16-4214A0936DB6}|JustTouch_ApiServices\\JustTouch_ApiServices.csproj|solutionrelative:justtouch_apiservices\\supabaseservice\\supabaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,6 +47,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SupabaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\SupabaseService\\SupabaseRepository.cs",
+              "RelativeDocumentMoniker": "JustTouch_ApiServices\\SupabaseService\\SupabaseRepository.cs",
+              "ToolTip": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\SupabaseService\\SupabaseRepository.cs",
+              "RelativeToolTip": "JustTouch_ApiServices\\SupabaseService\\SupabaseRepository.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAcwIwAAACmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:49:05.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_Shared\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "JustTouch_Shared\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_Shared\\Models\\Product.cs",
+              "RelativeToolTip": "JustTouch_Shared\\Models\\Product.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwCMAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:46:29.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuController.cs",
+              "DocumentMoniker": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\Controllers\\MenuController.cs",
+              "RelativeDocumentMoniker": "JustTouch_ApiServices\\Controllers\\MenuController.cs",
+              "ToolTip": "C:\\Users\\Francisco\\Documents\\trabalo\\Repos\\Proyecto_JustTouch\\JustTouch v0.1\\JustTouch_ApiServices\\JustTouch_ApiServices\\Controllers\\MenuController.cs",
+              "RelativeToolTip": "JustTouch_ApiServices\\Controllers\\MenuController.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAuwNoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:45:38.038Z",
+              "EditorCaption": ""
             }
           ]
         }

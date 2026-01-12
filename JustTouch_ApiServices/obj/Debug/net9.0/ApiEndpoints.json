@@ -120,9 +120,24 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "catalog",
-        "Type": "JustTouch_Shared.Dtos.CatalogDto",
-        "IsRequired": true
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "branchCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "products",
+        "Type": "System.Collections.Generic.List\u00601[[JustTouch_Shared.Dtos.ProductDto, JustTouch_Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -153,7 +168,7 @@
     "Parameters": [
       {
         "Name": "catalog",
-        "Type": "JustTouch_Shared.Dtos.CatalogDto",
+        "Type": "JustTouch_Shared.Dtos.CategoryDto",
         "IsRequired": true
       }
     ],
