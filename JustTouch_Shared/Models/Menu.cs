@@ -9,11 +9,13 @@ namespace JustTouch_Shared.Models
         [PrimaryKey("IdMenu")]
         public int IdMenu { get; set; }
 
-        [Column("Catalog")]
-        public string Catalog { get; set; } = string.Empty;
+        [Column("Category")]
+        public string Category { get; set; } = string.Empty;
 
-        [Column("CatalogCode")]
-        public string CatalogCode { get; set; } = string.Empty;
+        [Column("CategoryCode")]
+        public string CategoryCode { get; set; } = string.Empty;
+
+        [Column("BranchCode")]
         public string BranchCode { get; set; } = string.Empty;
 
         [Column("BranchId")]

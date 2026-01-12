@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using JustTouch_Shared.Dtos;
+using System.Reflection;
 
 namespace JustTouch_ApiServices.Helpers
 {
@@ -30,5 +31,24 @@ namespace JustTouch_ApiServices.Helpers
 
             return destination;
         }
+
+
+        public static TDestination FormMap<TDestination>(IFormCollection src) where TDestination : class, new()
+        {
+            var dest = new TDestination();
+
+            foreach (var prop in typeof(TDestination).GetProperties())
+            {
+                if (src.TryGetValue(prop.Name, out var value))
+                {
+                    // Solo asignamos strings; convertir si hace falta
+                    if (prop.PropertyType == typeof(string))
+                        prop.SetValue(dest, value.ToString());
+                    // Aquí podrías agregar más conversiones si tienes int, decimal, etc.
+                }
+            }
+            return dest;
+        }
+
     }
 }

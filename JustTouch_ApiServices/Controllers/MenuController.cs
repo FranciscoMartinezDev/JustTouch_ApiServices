@@ -4,6 +4,7 @@ using JustTouch_Shared.Dtos;
 using JustTouch_Shared.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace JustTouch_ApiServices.Controllers
 {
@@ -69,7 +70,7 @@ namespace JustTouch_ApiServices.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet("{branchCode}")]
         public async Task<IActionResult> GetMenu(string branchCode)
         {
@@ -97,10 +98,10 @@ namespace JustTouch_ApiServices.Controllers
                                 catalog.products.Add(productWrapped);
                             }
                         }
-                        menuWrapped.catalogs.Add(catalog);
+                        menuWrapped.categories.Add(catalog);
                     }
                 }
-                var images = menuWrapped.catalogs.Select(async x =>
+                var images = menuWrapped.categories.Select(async x =>
                 {
                     foreach (var p in x.products)
                     {
@@ -126,7 +127,7 @@ namespace JustTouch_ApiServices.Controllers
         {
             try
             {
-                var data = await supabase.GetBy<Menu>(x => x.CatalogCode == catalogCode);
+                var data = await supabase.GetBy<Menu>(x => x.CategoryCode == catalogCode);
                 var catalog = data.FirstOrDefault();
                 if (catalog == null)
                 {
@@ -167,21 +168,36 @@ namespace JustTouch_ApiServices.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost("NewCatalog")]
-        public async Task<IActionResult> InsertCatalog(CatalogDto catalog)
+        public async Task<IActionResult> InsertCatalog()
         {
             try
             {
-                var catalogWrapped = Mapper.Map<CatalogDto, Menu>(catalog);
-                var newCatalog = await supabase.Insert(catalogWrapped);
+                // se toman los datos del form y se hacen los mapeos principales
+                var req = Request.Form;
+                var category = Mapper.FormMap<CatalogDto>(req);
+                var products = JsonConvert.DeserializeObject<List<ProductDto>>(Request.Form["products"]!);
+                category.products = products!;
+
+                //mapeo a entidades principales
+                var categoryWrapped = Mapper.Map<CatalogDto, Menu>(category!);
+                var productsWrapped = category.products.Select(x => Mapper.Map<ProductDto, Product>(x));
+                categoryWrapped.Products = productsWrapped.ToList();
+                
+                // se busca la sucursal por codigo
+                var branch = await supabase.GetBy<Branch>(x => x.BranchCode == categoryWrapped.BranchCode);
+                if (branch == null) return BadRequest("No hay una sucursal asociada a esta solicitud");
+                
+                // se realiza la insercion
+                var newCatalog = await supabase.Insert(categoryWrapped);
                 var error = new ErrorResponse()
                 {
                     Message = "No pudimos añadir el nuevo catalogo al menu",
                     StatusCode = 400
                 };
-                if (newCatalog == null) return BadRequest(error);
 
+                if (newCatalog == null) return BadRequest(error);
                 return Ok(newCatalog);
             }
             catch (Exception)
@@ -200,7 +216,7 @@ namespace JustTouch_ApiServices.Controllers
                 var updatedProducts = catalog.products.Where(x => x.id == 1).ToList();
 
                 var menuWrapped = Mapper.Map<CatalogDto, Menu>(catalog);
-                var updatedMenu = await supabase.Update(menuWrapped, x => x.CatalogCode == menuWrapped.CatalogCode);
+                var updatedMenu = await supabase.Update(menuWrapped, x => x.CategoryCode == menuWrapped.CategoryCode);
                 var error = new ErrorResponse()
                 {
                     Message = "No pudimos actualizar el catalogo",

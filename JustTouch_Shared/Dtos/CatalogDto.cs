@@ -1,9 +1,11 @@
-﻿namespace JustTouch_Shared.Dtos
+﻿using Newtonsoft.Json;
+
+namespace JustTouch_Shared.Dtos
 {
     public class CatalogDto
     {
-        public string catalog { get; set; } = string.Empty;
-        public string catalogCode { get; set; } = string.Empty;
+        public string category { get; set; } = string.Empty;
+        public string? categoryCode { get; set; }
         public string branchCode { get; set; } = string.Empty;
         public List<ProductDto> products { get; set; } = new();
     }

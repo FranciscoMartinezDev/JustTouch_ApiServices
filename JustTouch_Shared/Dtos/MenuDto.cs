@@ -2,6 +2,6 @@
 {
     public class MenuDto
     {
-        public List<CatalogDto> catalogs { get; set; } = new();
+        public List<CatalogDto> categories { get; set; } = new();
     }
 }

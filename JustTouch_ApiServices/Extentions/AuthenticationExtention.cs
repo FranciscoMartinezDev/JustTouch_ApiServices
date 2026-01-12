@@ -10,7 +10,6 @@ namespace JustTouch_ApiServices.Extentions
         {
             var supabaseUrl = config["Supabase:Url"];
             var supabaseAnonKey = config["Supabase:Key"];
-
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>
                     {
