@@ -1,0 +1,6 @@
+.vs/
+ProjectEvaluation/
+bin/
+obj/
+*.user
+*.suo
